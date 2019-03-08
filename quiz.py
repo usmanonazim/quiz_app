@@ -24,7 +24,10 @@ category_list = {'1': '17',
                  '3': '31',
                  '4': '25',
                  '5': '49',
-                 '6': '253'
+                 '6': '253',
+                 '7': '223',
+                 '8': '139',
+                 '9': '582'
                  }
 
 
@@ -47,7 +50,7 @@ while playing:
     numbers.clear()
     print("\nPick a Category: ")
     print("1: US States")
-    print("2: 3 letter words\n3: The Bible\n4: Science\n5: Food\n6: Food and Drink")
+    print("2: 3 letter words\n3: The Bible\n4: Science\n5: Food\n6: Food and Drink\n7: Word Origins\n8: 5 Letter Words\n9: US Geography")
 
     choice = input("Choose a category: ").lstrip().rstrip()
     response = requests.get(
@@ -56,7 +59,7 @@ while playing:
     category_name = response.json()['title']
     # convert the category name to a title (uppercase for the first letter of each word)
     category_name = string.capwords(category_name)
-    print("The current category is: " + category_name)
+    print("\nThe current category is: " + category_name)
 
     while True:
         i = random.randint(0, len(clues))
